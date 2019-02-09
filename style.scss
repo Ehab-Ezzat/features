@@ -1,0 +1,79 @@
+body {
+      margin: 0;
+      background: #333;
+      height: 200vh;
+      overflow-x: hidden;
+}
+
+.cursor {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      position: absolute;
+      transition: all .1s ease-out;
+      animation: anim1 .5s infinite alternate;
+      &:after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            border: 8px solid gray;
+            border-radius: 50%;
+            opacity: .5;
+            top: -8px;
+            left: -8px;
+            animation: anim2 .5s infinite alternate;
+      }
+}
+
+.expand {
+      animation: anim3 .5s forwards;
+      border: 1px solid red;
+}
+
+@keyframes anim1 {
+      from {
+            transform: scale(1)
+      }
+      to {
+            transform: scale(.7)
+      }
+}
+
+@keyframes anim2 {
+      from {
+            transform: scale(1)
+      }
+      to {
+            transform: scale(.4);
+      }
+}
+
+@keyframes anim3 {
+      0% {
+            transform: scale(1)
+      }
+      50% {
+            transform: scale(3);
+      }
+      100% {
+            transform: scale(1);
+            opacity: 0;
+      }
+}
+
+/* Let's get this party started */
+
+::-webkit-scrollbar {
+      width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(0, 255, 191, 0.8);
+}
+
+::-webkit-scrollbar-track-piece {
+      background: rgba(66, 136, 119, 0.8);
+}
